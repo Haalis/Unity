@@ -1,0 +1,54 @@
+[
+	{
+		"id" : 0,
+		"title": "Steel Gloves",
+		"itemtype": "gloves",
+		"value": 6,
+		"stats":{
+		"attackspeed": 112, 
+		"damage": 1,
+		"defence": 4,
+		"duration": 0,
+		"vitality": 2
+		},
+		"description": "Gloves made from steel yea.",
+		"stackable": false,
+		"rarity": 8,
+		"slug": "steel_gloves"
+	},{
+		"id" : 1,
+		"title": "Iha vitu eeppine miekka",
+		"itemtype": "melee",
+		"value": 543,
+		"stats":{
+		"attackspeed": 112, 
+		"damage": 60,
+		"defence": 2,
+		"duration": 0,
+		"vitality": 54
+
+		},
+		"description": "Semi eeppine miekka",
+		"stackable": false,
+		"rarity": 2,
+		"slug": "the_great_stick"
+	},{
+	"id": 100,
+	"title": "Health Potion",
+	"itemtype": "consumable",
+	"value": 10,
+	"stats": {
+		"attackspeed": 112, 
+		"damage": 50,
+		"defence": 2,
+		"duration": 0,
+		"vitality": 54
+	},
+	"description": "Health potion, very consumable",
+	"stackable": true,
+	"rarity": 10,
+	"slug": "health_potion"
+}
+
+
+]
