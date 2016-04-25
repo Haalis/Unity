@@ -10,6 +10,7 @@ public class mob : MonoBehaviour {
 	public float hitcooldown;
 	public float range;
 	public CharacterController controller;
+	GameObject playerobject;
 	public Transform player;
 	bool aggro = false;
 
@@ -18,6 +19,8 @@ public class mob : MonoBehaviour {
 	void Start () {
 		speed = movespeed;
 		animator = GetComponent<Animator>();
+		playerobject = GameObject.FindGameObjectWithTag ("Player");
+		player = playerobject.transform;
 	}
 	
 	// Update is called once per frame
