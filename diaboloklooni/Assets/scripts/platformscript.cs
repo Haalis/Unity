@@ -8,7 +8,7 @@ public class platformscript : MonoBehaviour {
 	public float cooldowntimer;
 	// Use this for initialization
 	void Start () {
-		player = GetComponentInParent<mob>().player;
+		player =GameObject.FindGameObjectWithTag ("Player").transform;
 	}
 	
 	// Update is called once per frame
