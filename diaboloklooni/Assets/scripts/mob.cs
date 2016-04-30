@@ -56,7 +56,7 @@ public class mob : MonoBehaviour {
 	}
 
 	void lookatplayer (){
-		if(aggro == true){
+		if(aggro == true && Vector3.Distance (transform.position, player.position) > range ){
 		
 		Quaternion newRotation = Quaternion.LookRotation (player.position - transform.position);
 
@@ -70,7 +70,7 @@ public class mob : MonoBehaviour {
 }
 
 	void chase(){
-		if (aggro == true && Vector3.Distance (transform.position, player.position) > range) {
+		if (aggro == true && Vector3.Distance (transform.position, player.position) > range ) {
 			controller.SimpleMove (transform.forward * speed);
 			speed = movespeed;
 
