@@ -11,6 +11,7 @@ public class Controls : MonoBehaviour {
         }
         if (Input.GetKeyDown("1"))
         {
+            
             Debug.Log("1");
         }
         if (Input.GetKeyDown("2"))
@@ -19,6 +20,8 @@ public class Controls : MonoBehaviour {
         }
         if (Input.GetKeyDown("3"))
         {
+            //HEALING SPELL ID 0
+            this.GetComponent<SpellManager>().CastSpell(0);
             Debug.Log("3");
         }
         if (Input.GetKeyDown("4"))

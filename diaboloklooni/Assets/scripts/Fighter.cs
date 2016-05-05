@@ -6,6 +6,7 @@ public class Fighter : MonoBehaviour {
 	public float range;
 	public float hitcooldown;
 	public int health;
+    public int maxHealth;
 	Animator animator;
 	//CharacterController ccontroller;
 	public GameObject opponent;
@@ -28,7 +29,10 @@ public class Fighter : MonoBehaviour {
 			Debug.Log (opponent.GetComponent<mob> ().health);
 			//dealdamage ();
 			}
-
+        if (health > maxHealth)
+        {
+            health = maxHealth;
+        } 
 
 
 
