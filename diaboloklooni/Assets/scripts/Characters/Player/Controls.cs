@@ -9,6 +9,7 @@ public class Controls : MonoBehaviour {
         {
             Inventory.GetComponent<Inventory>().CloseAndOpenInventory();
         }
+  
         if (Input.GetKeyDown("1"))
         {
             
