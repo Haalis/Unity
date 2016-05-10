@@ -16,11 +16,13 @@ public class ItemData : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
     private Transform parentReturnTo;
     private Vector2 positionReturnTo;
     CharacterPanel characterPanel;
+    GameObject Player;
 
     void Start()
     {
         characterPanel = GameObject.Find("Character Panel").GetComponent<CharacterPanel>();
         inv = GameObject.Find("Inventory").GetComponent<Inventory>();
+        Player = GameObject.FindGameObjectWithTag("Player");
         tooltip = inv.GetComponent<Tooltip>();
 
     }
@@ -47,6 +49,7 @@ public class ItemData : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
                 switch (item.ID)
                 {
                     case 100:
+                        Player.GetComponent<Fighter>().health += 25;
                         Debug.Log("Health Potion otettu'd");
                         break;
                 }
