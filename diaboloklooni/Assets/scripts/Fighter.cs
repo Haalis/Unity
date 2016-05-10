@@ -7,6 +7,8 @@ public class Fighter : MonoBehaviour {
 	public float hitcooldown;
 	public int health;
     public int maxHealth;
+	public int maxmana;
+	public int mana;
 	Animator animator;
 	//CharacterController ccontroller;
 	public GameObject opponent;
@@ -22,17 +24,20 @@ public class Fighter : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		
+		//textcontroller.CreateFloatingText ("20", transform);
 		if (Input.GetKey (KeyCode.Space)) {
 
-			Debug.Log (opponent);
-			Debug.Log (opponent.GetComponent<mob> ().health);
+			mana --;
 			//dealdamage ();
 			}
         if (health > maxHealth)
         {
             health = maxHealth;
         } 
+		if (mana > maxmana)
+		{
+			mana = maxmana;
+		} 
 
 
 
@@ -85,7 +90,13 @@ public class Fighter : MonoBehaviour {
 	
 	}
 
+	public void damagepop(int damagetaken){
 
+
+
+
+
+	}
 
 
 

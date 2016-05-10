@@ -56,7 +56,7 @@ public class mob : MonoBehaviour {
 	}
 
 	void lookatplayer (){
-		if(aggro == true && Vector3.Distance (transform.position, player.position) > range ){
+		if(aggro == true && Vector3.Distance (transform.position, player.position) > range  && cooldowntimer < Time.time){
 		
 		Quaternion newRotation = Quaternion.LookRotation (player.position - transform.position);
 
@@ -70,7 +70,7 @@ public class mob : MonoBehaviour {
 }
 
 	void chase(){
-		if (aggro == true && Vector3.Distance (transform.position, player.position) > range ) {
+		if (aggro == true && Vector3.Distance (transform.position, player.position) > range  && cooldowntimer < Time.time) {
 			controller.SimpleMove (transform.forward * speed);
 			speed = movespeed;
 
@@ -88,12 +88,14 @@ public class mob : MonoBehaviour {
 	void mobattack(){
 	
 		if (cooldowntimer <= Time.time) {
+			aggro = false;
 			player.GetComponent<Fighter> ().health -= 20;
             //Otin tänki pois:D
 			//Debug.Log (player.GetComponent<Fighter> ().health);
 			animator.SetBool ("Runnot", false);
 			animator.SetBool ("attack", true);
 			cooldowntimer = Time.time + hitcooldown;
+
 		} else {
 
             //Otin tän pois päält ku floodas koko paska :D
