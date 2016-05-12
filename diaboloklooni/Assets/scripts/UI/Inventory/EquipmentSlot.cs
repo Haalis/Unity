@@ -24,7 +24,10 @@ public class EquipmentSlot : MonoBehaviour, IPointerDownHandler, IPointerEnterHa
             {
                 
                 transform.GetChild(0).GetComponent<CanvasGroup>().alpha = 0;
-
+                Debug.Log("TAVARAT TAKAS");
+                GameObject.Find("playercharacter").GetComponent<Fighter>().minDamage = 1;
+                GameObject.Find("playercharacter").GetComponent<Fighter>().maxDamage = 5;
+                GameObject.Find("Text_Damage").GetComponent<Text>().text = "Damage: \n" + GameObject.Find("playercharacter").GetComponent<Fighter>().minDamage + " - " + GameObject.Find("playercharacter").GetComponent<Fighter>().maxDamage;
                 /*
                 stats.additionalAttackPower -= equippedItem.Power;
                 stats.additionalAttackSpeed -= equippedItem.Speed;

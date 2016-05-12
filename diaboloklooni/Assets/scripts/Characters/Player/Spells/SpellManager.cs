@@ -27,6 +27,7 @@ public class SpellManager : MonoBehaviour
             switch (spell_ID)
             {
                 case 0:
+                    Player.GetComponent<Fighter>().mana -= 10;
                     StartCoroutine(WaitThenSpell(2f, spell_ID));
 
                     break;

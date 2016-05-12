@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class Fighter : MonoBehaviour {
 
@@ -9,15 +10,22 @@ public class Fighter : MonoBehaviour {
     public int maxHealth;
 	public int maxmana;
 	public int mana;
-	Animator animator;
+    public int minDamage;
+    public int maxDamage;
+    
+    Animator animator;
 	//CharacterController ccontroller;
 	public GameObject opponent;
-	// Use this for initialization
+
 	float cooldowntimer;
 
 	void Start () {
-		animator = GetComponent<Animator>();
+        minDamage = 1;
+        maxDamage = 5;
+        textcontroller.Initialize();
+        animator = GetComponent<Animator>();
 	//	ccontroller = GetComponent<CharacterController>();
+
 	}
 
 
@@ -30,6 +38,7 @@ public class Fighter : MonoBehaviour {
 			mana --;
 			//dealdamage ();
 			}
+
         if (health > maxHealth)
         {
             health = maxHealth;
@@ -38,7 +47,12 @@ public class Fighter : MonoBehaviour {
 		{
 			mana = maxmana;
 		} 
-
+        if (health <= 0)
+        {
+            SceneManager.LoadScene(0);
+            
+        
+        }
 
 
 	}
@@ -78,8 +92,9 @@ public class Fighter : MonoBehaviour {
 
 
 
-
-			opponent.GetComponent<mob> ().health -= 20;
+            int damage = (int)Random.Range(minDamage, maxDamage);
+			opponent.GetComponent<mob> ().health -= damage;
+            textcontroller.CreateFloatingText(damage.ToString(), opponent.transform);
 			Debug.Log (opponent.GetComponent<mob> ().health);
 
 			cooldowntimer = Time.time + hitcooldown;

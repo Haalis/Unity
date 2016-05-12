@@ -9,19 +9,19 @@ public class FloatingText : MonoBehaviour {
 	private Text damageText;
 
 	// Use this for initialization
-	void Start () {
-	
+	void OnEnable () {
+        Debug.Log("Start");
 		//animator = animator.GetComponentInChildren <Animator>();
 		AnimatorClipInfo[] clipInfo = animator.GetCurrentAnimatorClipInfo (0);
 		Destroy(gameObject, clipInfo [0].clip.length);
-		damageText = GetComponent<Text> ();
+		damageText = animator.GetComponent<Text> ();
 
 
 	}
 
 	public void SetText(string text){
-	
-		damageText.text = text;
+
+        damageText.text = text;
 	
 
 

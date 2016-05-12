@@ -48,6 +48,48 @@ public class Inventory : MonoBehaviour {
         AddItem(100);
         AddItem(100);
         AddItem(100);
+        AddItem(100);
+        AddItem(100);
+        AddItem(100);
+        AddItem(100);
+        AddItem(100);
+        AddItem(100);
+        AddItem(100);
+        AddItem(100);
+        AddItem(100);
+        AddItem(100);
+        AddItem(100);
+        AddItem(100);
+        AddItem(100);
+        AddItem(100);
+        AddItem(100);
+        AddItem(100);
+        AddItem(100);
+        AddItem(100);
+        AddItem(100);
+        AddItem(100);
+        AddItem(100);
+        AddItem(100);
+        AddItem(100);
+        AddItem(100);
+        AddItem(100);
+        AddItem(100);
+        AddItem(100);
+        AddItem(100);
+        AddItem(100);
+        AddItem(100);
+        AddItem(100);
+        AddItem(100);
+        AddItem(100);
+        AddItem(100);
+        AddItem(100);
+        AddItem(100);
+        AddItem(100);
+        AddItem(100);
+        AddItem(100);
+        AddItem(100);
+        AddItem(100);
+        AddItem(100);
 
     }
 

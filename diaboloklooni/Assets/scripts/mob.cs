@@ -89,10 +89,12 @@ public class mob : MonoBehaviour {
 	
 		if (cooldowntimer <= Time.time) {
 			aggro = false;
-			player.GetComponent<Fighter> ().health -= 20;
+            int damage = (int)Random.Range(5.0f, 10.0f);
+            player.GetComponent<Fighter> ().health -= 20;
+            textcontroller.CreateFloatingText(damage.ToString(), player.transform);
             //Otin tänki pois:D
-			//Debug.Log (player.GetComponent<Fighter> ().health);
-			animator.SetBool ("Runnot", false);
+            //Debug.Log (player.GetComponent<Fighter> ().health);
+            animator.SetBool ("Runnot", false);
 			animator.SetBool ("attack", true);
 			cooldowntimer = Time.time + hitcooldown;
 

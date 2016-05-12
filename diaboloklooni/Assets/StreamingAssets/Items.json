@@ -17,12 +17,12 @@
 		"slug": "steel_gloves"
 	},{
 		"id" : 1,
-		"title": "Iha vitu eeppine miekka",
+		"title": "Joku kurane miekka",
 		"itemtype": "melee",
 		"value": 543,
 		"stats":{
 		"attackspeed": 112, 
-		"damage": 60,
+		"damage": 40,
 		"defence": 2,
 		"duration": 0,
 		"vitality": 54

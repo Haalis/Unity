@@ -4,7 +4,6 @@ using UnityEngine.UI;
 
 public class CharacterPanel : MonoBehaviour
 {
-
     Inventory inventory;
     // playerStats stats;
 
@@ -47,18 +46,22 @@ public class CharacterPanel : MonoBehaviour
                         //Pistetää slotista vanha itemi takas invaa
                         if (inventory.AddItem(holder.ID) == true)
                         {
+                           
                             equip.equippedItem = newEquip;
                         }
                         else
                         {
+                            
                             inventory.AddItem(newEquip.ID);
                         }
                     }
 
                     child.GetChild(0).GetComponent<Image>().sprite = newEquip.Sprite;
                     child.GetChild(0).GetComponent<CanvasGroup>().alpha = 1;
-
- 
+                    GameObject.Find("playercharacter").GetComponent<Fighter>().minDamage = newEquip.Damage;
+                    GameObject.Find("playercharacter").GetComponent<Fighter>().maxDamage = newEquip.Damage + 10;
+                    GameObject.Find("Text_Damage").GetComponent<Text>().text = "Damage: \n" + GameObject.Find("playercharacter").GetComponent<Fighter>().minDamage + " - " + GameObject.Find("playercharacter").GetComponent<Fighter>().maxDamage;
+                    //AJANKOHTAISTA KUN STATSIT LÖYTÄÄ ITTENSÄ PELIIN
                     /*
                     stats.additionalAttackPower = newEquip.Power;
                     stats.additionalAttackSpeed = newEquip.Speed;
